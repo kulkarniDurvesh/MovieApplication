@@ -1,0 +1,42 @@
+﻿@model Teacher.Entity.Master
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+<form method="post">
+
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" asp-for="Name"/>
+    </div>
+    <div class="form-group">
+        <label for="Skills">Skills</label>
+        <input type="text" class="form-control" asp-for="Skills"/>
+    </div>
+   <div class="form-group">
+        <label for="TotalStudent">TotalStudent</label>
+        <input type="text" class="form-control" asp-for="TotalStudent"/>
+    </div>
+    <div class="form-group">
+        <label for="Salary">Salary</label>
+        <input type="text" class="form-control" asp-for="Salary"/>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Register">
+    <button type="button" class="btn btn-secondary">Reset</button>
+    <hr />
+    @if (ViewBag.status == "Ok")
+    {
+       <div class="alert alert-success">
+            @ViewBag.message
+        </div> 
+    }
+    else if (ViewBag.status == "Error")
+    {
+        <div class="alert alert-danger">
+            @ViewBag.message
+        </div>   
+    }
+
+</form>
