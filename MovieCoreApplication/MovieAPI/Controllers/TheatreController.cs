@@ -28,5 +28,19 @@ namespace MovieAPI.Controllers
 
         }
 
+        [HttpDelete("DeleteTheatre")]
+        public IActionResult DeleteTheatre(int theatreId)
+        {
+            _theatreService.DeleteTheatre(theatreId);
+            return Ok("Deleted Sucessfully");
+        }
+
+        [HttpPatch("UpdateTheatre")]
+        public IActionResult UpdateTheatre([FromBody]TheatreModel theatreModel)
+        {
+            _theatreService.UpdateTheatre(theatreModel);
+            return Ok("Updated Successfully");
+        }
+
     }
 }

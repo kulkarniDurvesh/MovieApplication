@@ -17,9 +17,29 @@ namespace MovieApp.Business.Services
         {
             return _iuser.Register(userModel);
         }
-        public object SelectUsers()
+        public object ShowUserDetails()
         {
-            return _iuser.SelectUsers();
+            return _iuser.ShowUserDetails();
         }
+
+
+        public string UpdateUser(UserModel user)
+        {
+            _iuser.UpdateUser(user);
+            return "updated successfully";
+        }
+
+        public string DeleteUser(int userId)
+        {
+            _iuser.DeleteUser(userId);
+            return "deleted successfully";
+        }
+
+        public void GetUserById(int userId)
+        {
+            _iuser.GetUserById(userId);
+        }
+
+
     }
 }

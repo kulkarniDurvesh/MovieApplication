@@ -1,0 +1,22 @@
+﻿@model IEnumerable<MovieApp.Entity.MovieModel>
+@{
+    ViewData["Title"] = "SelectMovies";
+}
+
+<h1>SelectMovies</h1>
+<hr />
+<form>
+<table class="table table-striped">
+  <tr><td></td><td>Id</td> <td>Movie</td> <td>Actor</td> <td>Actress</td></tr>
+    @{
+    
+    foreach(var item in Model)
+    {
+       <tr><td><input type="checkbox" /></td><td>@item.MovieId</td><td>@item.MovieName </td><td>@item.ActorName</td><td>@item.ActressName</td><td><img src=""/></td></tr>
+
+    }
+
+}
+
+</table>
+</form>

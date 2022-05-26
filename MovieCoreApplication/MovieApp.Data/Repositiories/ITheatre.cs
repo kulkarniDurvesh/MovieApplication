@@ -9,8 +9,8 @@ namespace MovieApp.Data.Repositiories
     {
         string Register(TheatreModel theatreModel);
 
-        string Update(TheatreModel theatreModel);
-        string Delete();
+        string UpdateTheatre(TheatreModel theatreModel);
+        string Delete(int theatreId);
         object SelectTheatre();
 
     }

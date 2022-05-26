@@ -8,10 +8,11 @@ namespace MovieApp.Data.Repositiories
     public interface IUser
     {
         string Register(UserModel userModel);
-        object Login();
+        UserModel Login(UserModel userModel);
 
-        string Update();
-        string Delete();
-        object SelectUsers();
+        string UpdateUser(UserModel userModel);
+        string DeleteUser(int userId);
+        object ShowUserDetails();
+        object GetUserById(int userId);
     }
 }

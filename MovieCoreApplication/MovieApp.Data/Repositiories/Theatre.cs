@@ -1,4 +1,5 @@
-﻿using MovieApp.Data.DataConnection;
+﻿using Microsoft.EntityFrameworkCore;
+using MovieApp.Data.DataConnection;
 using MovieApp.Entity;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,17 @@ namespace MovieApp.Data.Repositiories
             _movieDbContext = movieDbContext;
         }
 
-        public string Delete()
+   
+
+        public string Delete(int theatreId)
         {
-            throw new NotImplementedException();
+            string msg = "";
+            var theatre = _movieDbContext.theatreModel.Find(theatreId);
+            // _movieDbContext.movieModel.Remove(theatre);
+            _movieDbContext.Entry(theatre).State = EntityState.Deleted;
+            _movieDbContext.SaveChanges();
+            msg = "Deleted ";
+            return msg;
         }
 
         public string Register(TheatreModel theatreModel)
@@ -38,9 +47,13 @@ namespace MovieApp.Data.Repositiories
             return theatreList;
         }
 
-        public string Update(TheatreModel theatreModel)
+        public string UpdateTheatre(TheatreModel theatreModel)
         {
-            throw new NotImplementedException();
+            string msg = "";
+            _movieDbContext.Entry(theatreModel).State = EntityState.Modified;
+            _movieDbContext.SaveChanges();
+            msg = "Theatre Updated";
+            return msg;
         }
     }
 }

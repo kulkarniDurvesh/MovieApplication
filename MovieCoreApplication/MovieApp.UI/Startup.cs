@@ -36,6 +36,10 @@ namespace MovieApp.UI
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            //wwwroot - web root folder
+            //css->site.css
+            //http://localhost:8000/site.css... all file under www root can be access through http request.
             app.UseStaticFiles();
 
             app.UseRouting();

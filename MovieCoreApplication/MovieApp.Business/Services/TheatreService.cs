@@ -26,9 +26,16 @@ namespace MovieApp.Business.Services
             return _itheatre.SelectTheatre();
         }
 
-        public object UpdateMovie(TheatreModel theatre)
+        public string UpdateTheatre(TheatreModel theatre)
         {
-            return _itheatre.Update(theatre);
+            _itheatre.UpdateTheatre(theatre);
+            return "Updated successfully";
+        }
+
+        public void DeleteTheatre(int theaterId)
+        {
+            _itheatre.Delete(theaterId);
+            
         }
 
 

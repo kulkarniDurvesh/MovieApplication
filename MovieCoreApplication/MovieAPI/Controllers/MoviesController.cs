@@ -29,7 +29,14 @@ namespace MovieAPI.Controllers
 
         }
 
-        
+        [HttpPut("UpdateMovies")]
+        public IActionResult UpdateMovies([FromBody] MovieModel movieModel)
+        {
+            _movieService.UpdateMovie(movieModel);
+                return Ok("Updated Successfully");
+        }
+
+
 
         [HttpDelete("DeleteMovie")]
         public IActionResult DeleteMovie(int movieId) 
