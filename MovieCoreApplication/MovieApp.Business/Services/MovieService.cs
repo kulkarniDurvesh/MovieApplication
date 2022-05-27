@@ -38,9 +38,12 @@ namespace MovieApp.Business.Services
             return "deleted successfully";
         }
 
-        public void GetMovieById(int movieId)
+        public object GetMovieById(int movieId)
         {
-            _imovie.GetMovieById(movieId);
+          return  _imovie.GetMovieById(movieId);
         }
+
+
+
     }
 }

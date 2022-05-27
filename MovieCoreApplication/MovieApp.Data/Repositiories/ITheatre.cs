@@ -12,6 +12,6 @@ namespace MovieApp.Data.Repositiories
         string UpdateTheatre(TheatreModel theatreModel);
         string Delete(int theatreId);
         object SelectTheatre();
-
+        object GetTheatreById(int theaterId);
     }
 }

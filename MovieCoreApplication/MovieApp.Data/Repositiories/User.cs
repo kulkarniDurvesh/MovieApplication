@@ -53,7 +53,15 @@ namespace MovieApp.Data.Repositiories
 
         public object GetUserById(int userId)
         {
-            throw new NotImplementedException();
+            var foundUser = _movieDbContext.userModel.Find(userId);
+            if (foundUser != null)
+            {
+                return foundUser;
+            }
+            else
+            {
+                return "User not found";
+            }
         }
 
         public object ShowUserDetails()

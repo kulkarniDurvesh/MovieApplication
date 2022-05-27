@@ -35,9 +35,10 @@ namespace MovieApp.Business.Services
             return "deleted successfully";
         }
 
-        public void GetUserById(int userId)
+        public object GetUserById(int userId)
         {
-            _iuser.GetUserById(userId);
+            return _iuser.GetUserById(userId);
+            
         }
 
 

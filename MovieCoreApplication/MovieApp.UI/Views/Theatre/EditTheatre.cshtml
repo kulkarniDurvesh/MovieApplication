@@ -1,31 +1,35 @@
 ﻿@model MovieApp.Entity.TheatreModel
 @{
-    ViewData["Title"] = "AddPlay";
+    ViewData["Title"] = "Edit Theatre";
 }
-
-<h1>AddPlay</h1>
 
 <a asp-action="ShowTheatre" asp-controller="Theatre">Theatre Details</a>
 
-<form method="post"> 
+<h1>Edit Theatre</h1>
 
+
+<form method="post">
     <div class="form-group">
-        <label for="TheatreName">TheatreName</label>
+        <label for="ThreatreId">ThreatreId</label>
+        <input type="text" class="form-control" asp-for="ThreatreId" />
+    </div>
+    <div class="form-group">
+        <label for="ThreatreName">ThreatreName</label>
         <input type="text" class="form-control" asp-for="ThreatreName"/>
     </div>
     <div class="form-group">
-        <label for="TheatrePlay">TheatrePlay</label>
+        <label for="ThreatrePlayName">ThreatrePlayName</label>
         <input type="text" class="form-control" asp-for="ThreatrePlayName"/>
     </div>
    <div class="form-group">
-        <label for="TheatreCapacity">TheatreCapacity</label>
+        <label for="ThreatreCapacity">ThreatreCapacity</label>
         <input type="text" class="form-control" asp-for="ThreatreCapacity"/>
     </div>
     <div class="form-group">
         <label for="Price">Price</label>
         <input type="text" class="form-control" asp-for="Price"/>
     </div>
-    <input type="submit" class="btn btn-primary" value="Register">
+    <input type="submit" class="btn btn-primary" value="Update">
     <button type="button" class="btn btn-secondary">Reset</button>
     <hr />
     @if (ViewBag.status == "Ok")

@@ -29,12 +29,20 @@ namespace MovieApp.Data.Repositiories
             return msg;
         }
 
-        public MovieModel GetMovieById(int movieId)
+        public object GetMovieById(int movieId)
         {
-            return _movieDbContext.movieModel.Find(movieId);
+            var foundMovie = _movieDbContext.movieModel.Find(movieId);
+            if (foundMovie != null)
+            {
+                return foundMovie;
+            }
+            else
+            {
+                return "Movie not found";
+            }
         }
 
-  
+
 
         public string Register(MovieModel movieModel)
         {

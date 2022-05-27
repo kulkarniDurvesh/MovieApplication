@@ -38,7 +38,11 @@ namespace MovieApp.Business.Services
             
         }
 
+        public object GetTheatreById(int theaterId)
+        {
+            return _itheatre.GetTheatreById(theaterId);
 
+        }
 
     }
 }

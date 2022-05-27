@@ -48,6 +48,11 @@ namespace MovieAPI.Controllers
             return Ok("User deleted successfully");
         }
 
+        [HttpGet("GetUserById")]
+        public IActionResult GetUserById(int userId)
+        {
+            return Ok(_userService.GetUserById(userId));
+        }
 
 
     }

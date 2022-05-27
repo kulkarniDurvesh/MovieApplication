@@ -13,6 +13,6 @@ namespace MovieApp.Data.Repositiories
         string UpdateMovie(MovieModel movieModel);
         string Delete(int movieId);
         object SelectMovies();
-        MovieModel GetMovieById(int movieId);
+        object GetMovieById(int movieId);
     }
 }

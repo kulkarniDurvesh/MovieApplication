@@ -1,16 +1,20 @@
 ﻿@model MovieApp.Entity.MovieModel
 @{
-    ViewData["Title"] = "AddMovie";
+    ViewData["Title"] = "Edit Movie";
 }
-<hr />
-<a asp-action="SelectMovies" asp-controller="Movie">Movie Details</a>
 
-<h1>AddMovie</h1>
+
+
+<h1>Register</h1>
+
 
 <form method="post">
-
     <div class="form-group">
-        <label for="TheatreName">MovieName</label>
+        <label for="MovieId">MovieId</label>
+        <input type="text" class="form-control" asp-for="MovieId" disabled="disabled"/>
+    </div>
+    <div class="form-group">
+        <label for="MovieName">MovieName</label>
         <input type="text" class="form-control" asp-for="MovieName"/>
     </div>
     <div class="form-group">
@@ -29,7 +33,7 @@
         <label for="Price">Price</label>
         <input type="text" class="form-control" asp-for="Price"/>
     </div>
-    <input type="submit" class="btn btn-primary" value="Register">
+    <input type="submit" class="btn btn-primary" value="Update">
     <button type="button" class="btn btn-secondary">Reset</button>
     <hr />
     @if (ViewBag.status == "Ok")

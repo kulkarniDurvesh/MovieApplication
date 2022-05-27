@@ -44,7 +44,13 @@ namespace MovieAPI.Controllers
             _movieService.DeleteMovie(movieId);
             return Ok("Movie deleted successfully");
         }
-        
+
+        [HttpGet("GetMovieById")]
+        public IActionResult GetMovieById(int movieId)
+        {
+            return Ok(_movieService.GetMovieById(movieId));
+        }
+
 
     }
 }

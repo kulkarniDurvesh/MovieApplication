@@ -55,5 +55,20 @@ namespace MovieApp.Data.Repositiories
             msg = "Theatre Updated";
             return msg;
         }
+
+
+        public object GetTheatreById(int theatreId)
+        {
+            var foundTheatre = _movieDbContext.theatreModel.Find(theatreId);
+            if (foundTheatre != null)
+            {
+                return foundTheatre;
+            }
+            else
+            {
+                return "Theatre not found";
+            }
+        }
+
     }
 }
