@@ -6,8 +6,8 @@
 <h1>SelectMovies</h1>
 <hr />
 <form>
-<table class="table table-striped">
-  <tr><td></td><td>Id</td> <td>Movie</td> <td>Actor</td> <td>Actress</td><td>Edit</td><td>Delete</td></tr>
+<table class="table table-dark">
+  <tr><td>Sr.No</td><td>Id</td> <td>Movie</td> <td>Actor</td> <td>Actress</td><td>Edit</td><td>Delete</td></tr>
     @{
     
     foreach(var item in Model)
@@ -23,3 +23,5 @@
 
 </table>
 </form>
+
+<button class="bg-light"><a asp-action="AddMovie" asp-controller="Movie">Add Movie</a></button>

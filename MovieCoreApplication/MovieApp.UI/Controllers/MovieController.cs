@@ -158,8 +158,7 @@ namespace MovieApp.UI.Controllers
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-                        ViewBag.status = "Ok";
-                        ViewBag.message = "Deleted Successfully!!!";
+                        return RedirectToAction("SelectMovies", "Movie");
                     }
                     else
                     {

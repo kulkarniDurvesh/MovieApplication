@@ -55,5 +55,13 @@ namespace MovieAPI.Controllers
         }
 
 
+        [HttpPost("Login")]
+        public IActionResult Login(UserModel userModel)
+        {
+            return Ok(_userService.Login(userModel));
+        }
+
+
+
     }
 }

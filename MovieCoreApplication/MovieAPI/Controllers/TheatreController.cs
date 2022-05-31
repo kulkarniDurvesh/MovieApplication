@@ -35,7 +35,8 @@ namespace MovieAPI.Controllers
             return Ok("Deleted Sucessfully");
         }
 
-        [HttpPut("UpdateTheatre")]
+        [HttpPut("" +
+            "UpdateTheatre")]
         public IActionResult UpdateTheatre([FromBody]TheatreModel theatreModel)
         {
             _theatreService.UpdateTheatre(theatreModel);

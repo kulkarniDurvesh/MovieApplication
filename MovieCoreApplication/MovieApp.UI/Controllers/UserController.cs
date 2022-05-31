@@ -42,13 +42,13 @@ namespace MovieApp.UI.Controllers
         }
 
         [HttpGet]
-        public IActionResult Register()
+        public IActionResult AddUser()
         { 
             return View();  
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(UserModel userModel)
+        public async Task<IActionResult> AddUser(UserModel userModel)
         {
             ViewBag.status = "";
             using (HttpClient client = new HttpClient())
@@ -177,7 +177,34 @@ namespace MovieApp.UI.Controllers
         }
 
 
-
+        public IActionResult UserLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> UserLogin(UserModel userModel)
+        {
+            ViewBag.status = "";
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(userModel), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiURL"] + "User/Login";
+                using (var response = await client.PostAsync(endPoint, content))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        return RedirectToAction("SelectMovies", "Movie");
+                    }
+                    
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "Wrong credentials!";
+                    }
+                }
+            }
+            return View();
+        }
 
 
     }

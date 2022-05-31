@@ -41,6 +41,9 @@ namespace MovieApp.Business.Services
             
         }
 
-
+        public object Login(UserModel userModel)
+        {
+            return _iuser.Login(userModel);
+        }
     }
 }
