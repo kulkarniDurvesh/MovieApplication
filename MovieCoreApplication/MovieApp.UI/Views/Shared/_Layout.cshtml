@@ -11,7 +11,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MovieApp.UI</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MyMovieApp</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -22,9 +22,20 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Movie" asp-action="SelectMovies">Movies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Theatre" asp-action="ShowTheatre">Theatre Play</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
+                </div>
+                <div>
+                    <button class="btn btn-outline-success my-2 my-sm-0 " > <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="UserLogin">Login</a></button>
+                    <button class="btn btn-outline-success my-2 my-sm-0 " > <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="AddUser">Register</a></button>
+                   
                 </div>
             </div>
         </nav>
