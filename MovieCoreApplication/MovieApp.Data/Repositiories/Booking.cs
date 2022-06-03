@@ -23,10 +23,33 @@ namespace MovieApp.Data.Repositiories
             return "Tickect Booked Successfully";
         }
 
+        public object GetBookingById(int bookingId)
+        {
+          var foundBooking = _movieDbContext.bookingModels.Find(bookingId);
+            if (foundBooking != null)
+            {
+                return foundBooking;
+            }
+            else
+            {
+                return "Booking Not Found";
+            }
+            
+        }
+
         public object showAllBooking()
         {
             List<BookingModel> bookingList= _movieDbContext.bookingModels.ToList();
             return bookingList;
+        }
+
+        public string UpdateBookingDetails(BookingModel bookingModel)
+        {
+            string msg = "";
+            _movieDbContext.Entry(bookingModel).State =Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _movieDbContext.SaveChanges();
+            msg = "Updatation Completed";
+            return msg;
         }
     }
 }

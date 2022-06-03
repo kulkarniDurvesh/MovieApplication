@@ -29,5 +29,18 @@ namespace MovieAPI.Controllers
             return Ok(_bookingService.AddBooking(bookingModel));
         }
 
+        [HttpGet("GetBookingById")]
+        public IActionResult GetBookingById(int bookingId)
+        {
+            return Ok(_bookingService.GetBookingById(bookingId));
+        }
+
+        [HttpPut("UpdateBookingDetails")]
+        public IActionResult UpdateBookingDetails([FromBody] BookingModel bookingModel)
+        {
+            _bookingService.UpdateBookingDetails(bookingModel);
+            return Ok("Updated Successfully");
+        }
+
     }
 }

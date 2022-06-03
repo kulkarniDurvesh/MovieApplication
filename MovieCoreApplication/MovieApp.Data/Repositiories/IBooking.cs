@@ -10,5 +10,7 @@ namespace MovieApp.Data.Repositiories
         string AddBooking(BookingModel bookingModel);
 
         object showAllBooking();
+        object GetBookingById(int bookingId);
+        string UpdateBookingDetails(BookingModel bookingModel);
     }
 }

@@ -31,7 +31,7 @@
                 <td>@item.ShowTime</td>
                 <td>@item.date</td>
                 <td>@item.Seats</td>
-                <td><a asp-action="EditUser" asp-route-BookingId=@item.BookingId>Edit</a></td>
+                <td><a asp-action="EditBookingDetails" asp-route-BookingId=@item.BookingId>Edit</a></td>
                 <td><a asp-action="Delete" asp-route-BookingId=@item.BookingId>Delete</a></td>
             </tr>
         }

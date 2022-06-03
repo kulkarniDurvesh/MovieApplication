@@ -25,5 +25,15 @@ namespace MovieApp.Business.Services
             return _ibooking.showAllBooking();
         }
 
+        public object GetBookingById(int bookingId)
+        {
+            return _ibooking.GetBookingById(bookingId);
+        }
+
+        public string UpdateBookingDetails(BookingModel bookingModel)
+        {
+            _ibooking.UpdateBookingDetails(bookingModel);
+            return "Updated Successfully";
+        }
     }
 }

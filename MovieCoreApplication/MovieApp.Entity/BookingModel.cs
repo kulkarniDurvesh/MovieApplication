@@ -29,7 +29,7 @@ namespace MovieApp.Entity
 
         public MovieSTime MovieSTime { get; set; }
 
-       
+        
         public string ShowTime { get; set; }
 
       
